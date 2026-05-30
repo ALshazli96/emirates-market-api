@@ -19,6 +19,9 @@ Route::get('/cars/{id}',  [CarController::class, 'show']);
 Route::get('/properties',       [PropertyController::class, 'index']);
 Route::get('/properties/{id}',  [PropertyController::class, 'show']);
 
+// Search
+Route::get('/search', [App\Http\Controllers\SearchController::class, 'search']);
+
 // محمية بـ JWT
 Route::middleware('auth:api')->group(function () {
     Route::get('/me',           [AuthController::class, 'me']);
